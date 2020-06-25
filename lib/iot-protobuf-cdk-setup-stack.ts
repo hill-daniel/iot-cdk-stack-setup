@@ -1,4 +1,4 @@
-import {App, RemovalPolicy, Stack, StackProps} from '@aws-cdk/core';
+import {App, Duration, RemovalPolicy, Stack, StackProps} from '@aws-cdk/core';
 import {AttributeType, Table} from '@aws-cdk/aws-dynamodb';
 import {Stream} from '@aws-cdk/aws-kinesis';
 import {Code, Function, Runtime, StartingPosition} from '@aws-cdk/aws-lambda';
@@ -12,9 +12,11 @@ export class IotProtobufCdkSetupStack extends Stack {
         const deviceTableName = 'iot_device_log'
 
         const protobufProcessing = new Function(this, 'Protobuf Processing', {
+            functionName: "iot_process_messages",
             runtime: Runtime.GO_1_X,
             handler: 'main',
-            code: Code.fromAsset(path.join(__dirname, '../../iot-lambda/function.zip')),
+            code: Code.fromAsset(path.join(__dirname, '../../iot-protobuf-lambda/function.zip')),
+            timeout: Duration.seconds(5),
             environment: {
                 dynamo_device_log_table: deviceTableName,
             }
