@@ -9,10 +9,11 @@
  * Policies and permissions 
 
 ## Usage
- * `npm run build`
- * `cdk bootstrap aws://your-account-id/your-region`
- * `cdk synth`
- * `cdk deploy`
+ 1. `npm install`
+ 1. `npm run build`
+ 1. `npx cdk bootstrap aws://your-account-id/your-region`
+ 1. `npx cdk synth`
+ 1. `npx cdk deploy`
 
 ## Useful commands
  * `npm run build`   compile typescript to js
