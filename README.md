@@ -1,6 +1,6 @@
 # CDK setup for processing protocol buffers messages with AWS IoT Core
 
-## Part of the codecentric blog post ["Processing protocol buffers messages with AWS IoT Core"](https://blog.codecentric.de/en/2020/06/processing-protobufs-with-iot-core)
+## Part of the codecentric blog post ["Processing protocol buffers messages with AWS IoT Core"](https://blog.codecentric.de/en/2020/07/processing-protobufs-with-iot-core)
 
 ### This will setup the following:
  * Kinesis Data Stream - buffer incoming MQTT protobuf messages and hand them over to Lambda function
