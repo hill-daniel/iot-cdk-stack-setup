@@ -24,7 +24,7 @@ export class IotProtobufCdkSetupStack extends Stack {
 
         const deviceLogTable = new Table(this, 'Device Log Table', {
             tableName: deviceTableName,
-            partitionKey: {name: 'id', type: AttributeType.STRING},
+            partitionKey: {name: 'id', type: AttributeType.NUMBER},
             sortKey: {name: 'last_updated', type: AttributeType.NUMBER},
             removalPolicy: RemovalPolicy.DESTROY, // not recommended for production
         });
